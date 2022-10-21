@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/mnreyes1/FestivalMusica#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "sass": "^1.55.0"
   }
 }
