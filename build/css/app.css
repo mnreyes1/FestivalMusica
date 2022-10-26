@@ -360,6 +360,14 @@ h3 {
   color: #fff;
 }
 
+.navegacion-principal {
+  background-color: red;
+}
+@media (max-width: 480px) {
+  .navegacion-principal {
+    background-color: blue;
+  }
+}
 .navegacion-principal a {
   color: #fff;
   font-size: 2.4rem;
