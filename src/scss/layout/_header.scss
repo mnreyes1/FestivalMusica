@@ -37,7 +37,7 @@
     a {
         color: v.$blanco;
         font-size: 2.4rem;
-        padding-left: 2rem;
+        margin-left: 1.4rem;
         &:hover { // & es para omitir espacio que sass agrega por defecto al compilar
             color: v.$amarillo;
         }
