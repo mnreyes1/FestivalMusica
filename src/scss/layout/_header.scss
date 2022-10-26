@@ -8,16 +8,46 @@
     }
 }
 
-.navegacion-principal {
-    background-color: red;
-    @include m.phone {
-        background-color: blue;
+.contenido-header {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85%;
+    h1 {
+        margin-bottom: 0;
     }
+    @include m.desktopXL {
+        justify-content: space-between;
+    }
+    @include m.desktop {
+        width: 90%;
+    }
+    @include m.tablet {
+        flex-direction: column;
+        text-align: center;
+        h1 {
+            margin-bottom: 5rem;
+        }
+    }
+
+}
+
+.navegacion-principal {
     a {
         color: v.$blanco;
         font-size: 2.4rem;
+        padding-left: 2rem;
         &:hover { // & es para omitir espacio que sass agrega por defecto al compilar
             color: v.$amarillo;
+        }
+    }
+    @include m.tablet {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        a {
+            margin-bottom: 1rem;
         }
     }
 }
