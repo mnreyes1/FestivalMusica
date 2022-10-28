@@ -24,8 +24,38 @@
     }
 }
 
+@mixin minphone {
+    @media (min-width: v.$phone) {
+        @content;
+    }
+}
+
+@mixin mintablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin mindesktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin mindesktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content;
+    }
+}
+
 @mixin grid ($columnas, $espaciado) {
     display: grid;
     grid-template-columns: repeat($columnas, 1fr);
     gap: $espaciado;
+}
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
