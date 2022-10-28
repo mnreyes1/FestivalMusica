@@ -24,6 +24,7 @@ p {
 .contenedor {
     width: 95%;
     margin: 0 auto; // para centrar
+    max-width: 120rem;
 }
 
 a {
@@ -44,4 +45,9 @@ h2 {
 
 h3 {
     font-size: 3rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }

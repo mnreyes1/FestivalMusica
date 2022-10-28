@@ -331,6 +331,7 @@ p {
 .contenedor {
   width: 95%;
   margin: 0 auto;
+  max-width: 120rem;
 }
 
 a {
@@ -351,6 +352,11 @@ h2 {
 
 h3 {
   font-size: 3rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .header {
@@ -411,6 +417,9 @@ h3 {
 
 .video {
   position: relative;
+  max-height: 70rem;
+  min-width: 40rem;
+  overflow: hidden;
 }
 .video .overlay {
   position: absolute;
@@ -418,8 +427,61 @@ h3 {
   width: 100%;
   background: rgb(165, 3, 255);
   background: linear-gradient(90deg, rgba(165, 3, 255, 0.3) 0%, rgba(255, 0, 78, 0.3) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .video video {
   width: 100%;
   display: block;
+}
+@media (max-width: 1200px) {
+  .video video {
+    width: auto;
+  }
+}
+
+.contenido-video {
+  z-index: 10;
+}
+.contenido-video h2 {
+  color: #fff;
+  font-size: 7rem;
+  margin: 0;
+}
+.contenido-video p {
+  margin: 0;
+  background-color: #f53756;
+  padding: 1.5rem 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+}
+
+.sobre-festival {
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}
+@media (max-width: 768px) {
+  .sobre-festival {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.contenido-festival {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenido-festival h2 {
+  margin-bottom: 2rem;
+}
+.contenido-festival .fecha {
+  color: #f53756;
+  font-weight: bold;
 }

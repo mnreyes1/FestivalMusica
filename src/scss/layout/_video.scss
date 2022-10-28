@@ -3,17 +3,44 @@
 
 .video {
     position: relative;
-
+    max-height: 70rem;
+    min-width: 40rem;
+    overflow: hidden; // no se duplique la imagen o video para completar el height
     .overlay {
         position: absolute; // para posicionar letras sobre video
         height: 100%;
         width: 100%;
         background: rgb(165,3,255);
         background: linear-gradient(90deg, rgba(165,3,255,0.3) 0%, rgba(255,0,78,0.3) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     video {
         width: 100%;
         display: block; // Para que gradiente no se salga de los limites
+        @include m.desktop {
+            width: auto;
+        }
+    }
+}
+
+.contenido-video {
+    z-index: 10; // hacer que elementos se muestran mas abajo o arriba de otros elemntos
+    h2 {
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        background-color: v.$rosa;
+        padding: 1.5rem 1.5rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: v.$blanco;
+        display: inline-block;
     }
 }
