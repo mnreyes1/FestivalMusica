@@ -5,9 +5,10 @@ const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
 
 // Imagenes
-const cache = require('gulp-cache')
+const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
+const avif = require('gulp-avif');
 
 // Tareas
 function css(done) {
@@ -38,6 +39,16 @@ function webpTransform(done) {
     done();
 }
 
+function avifVersion(done) {
+    const opciones = {
+        quality: 50
+    };
+    src('src/img/**/*.{png,jpg}')
+        .pipe(avif(opciones))
+        .pipe(dest('build/img'));
+    done();
+}
+
 function dev(done) {
     watch('src/scss/**/*.scss', css);
     done();
@@ -46,5 +57,5 @@ function dev(done) {
 exports.css = css;
 exports.imagenes = imagenes
 exports.webpTransform = webpTransform;
-exports.dev = dev;
-exports.par_dev = parallel(imagenes, webpTransform, dev);
+exports.avifVersion = avifVersion;
+exports.dev = parallel(imagenes, webpTransform, avifVersion, dev);
