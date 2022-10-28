@@ -1,0 +1,19 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.video {
+    position: relative;
+
+    .overlay {
+        position: absolute; // para posicionar letras sobre video
+        height: 100%;
+        width: 100%;
+        background: rgb(165,3,255);
+        background: linear-gradient(90deg, rgba(165,3,255,0.3) 0%, rgba(255,0,78,0.3) 100%);
+    }
+
+    video {
+        width: 100%;
+        display: block; // Para que gradiente no se salga de los limites
+    }
+}
